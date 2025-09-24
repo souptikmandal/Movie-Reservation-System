@@ -3,13 +3,13 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 py-12 px-6">
+    <main className="min-h-screen py-12 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold mb-4">
             Movie Theater Management System
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg">
             Manage theaters, movies, and reservations all in one place
           </p>
         </div>
