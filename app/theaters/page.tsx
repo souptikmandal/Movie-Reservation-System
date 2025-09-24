@@ -30,7 +30,7 @@ export default async function Page() {
                                     </p>
                                 </div>
                                 <div>
-                                    <ShowtimeButton/>
+                                    <ShowtimeButton theater_id={theater.id}/>
                                 </div>
                             </li>
                         ))}
