@@ -36,34 +36,36 @@ export default async function TheaterShowtimes({ params }: Props) {
                                     <h2 className="text-xl font-semibold">{screen.screen_name}</h2>
                                     <p>Total Seats: {screen.total_seats}</p>
                                 </div>
-                                {screen.currentShowtime ? (
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{screen.currentShowtime.movie_title}</h3>
-                                        <p className="text-sm">
-                                            {new Date(screen.currentShowtime.start_time) <= new Date()
-                                                ? 'Now Playing'
-                                                : 'Next Up'
-                                            }
-                                        </p>
-                                        <p className="text-sm">
-                                            Start: {new Date(screen.currentShowtime.start_time).toLocaleTimeString([], {
-                                            hour: '2-digit',
-                                            minute: '2-digit'
-                                            })}
-                                        </p>
-                                        <p className="text-sm">
-                                            End: {new Date(screen.currentShowtime.end_time).toLocaleTimeString([], {
-                                            hour: '2-digit',
-                                            minute: '2-digit'
-                                            })}
-                                        </p>
-                                        <p className="text-sm font-semibold">${screen.currentShowtime.price}</p>
-                                    </div>
-                                ) : (
-                                    <div className="mt-3 p-3">
-                                        <p>No upcoming showtimes</p>
-                                    </div>
-                                )}
+                                <div className="list-col-wrap">
+                                    {screen.currentShowtime ? (
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{screen.currentShowtime.movie_title}</h3>
+                                            <p className="text-sm">
+                                                {new Date(screen.currentShowtime.start_time) <= new Date()
+                                                    ? 'Now Playing'
+                                                    : 'Next Up'
+                                                }
+                                            </p>
+                                            <p className="text-sm">
+                                                Start: {new Date(screen.currentShowtime.start_time).toLocaleTimeString([], {
+                                                hour: '2-digit',
+                                                minute: '2-digit'
+                                                })}
+                                            </p>
+                                            <p className="text-sm">
+                                                End: {new Date(screen.currentShowtime.end_time).toLocaleTimeString([], {
+                                                hour: '2-digit',
+                                                minute: '2-digit'
+                                                })}
+                                            </p>
+                                            <p className="text-sm font-semibold">${screen.currentShowtime.price}</p>
+                                        </div>
+                                    ) : (
+                                        <div className="mt-3 p-3">
+                                            <p>No upcoming showtimes</p>
+                                        </div>
+                                    )}
+                                </div>
                             </li>
                         ))}
                     </ul>
