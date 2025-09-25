@@ -23,10 +23,24 @@ export async function fetchScreensByTheater(theater_id: number) {
     }
 }
 
-export async function fetchShowtimesByScreen(screen_id: number) {
+export async function fetchCurrentOrNextShowtime(screen_id: number) {
     try {
-        const data = await sql<Showtime[]>`SELECT * FROM showtimes WHERE screen_id = ${screen_id}`
-        return data
+        const data = await sql`
+            SELECT
+            s.*,
+            m.title as movie_title,
+            m.duration as movie_duration,
+            sc.screen_name
+            FROM showtimes s
+            JOIN movies m ON s.movie_id = m.id
+            JOIN screens sc ON s.screen_id = sc.id
+            WHERE s.screen_id = ${screen_id}
+            AND s.is_active = TRUE
+            AND s.end_time > NOW()
+            ORDER BY s.start_time ASC
+            LIMIT 1
+        `
+        return data[0] || null
     } catch (err) {
         console.error('Database Error: ', err)
         throw new Error('Failed to fetch showtime data')
