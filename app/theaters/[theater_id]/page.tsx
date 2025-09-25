@@ -1,4 +1,4 @@
-import { fetchCurrentOrNextShowtime, fetchScreensByTheater } from '@/app/lib/data'
+import { fetchCurrentOrNextShowtime, fetchScreensByTheater, fetchTheaterNamefromID } from '@/app/lib/data'
 
 type Props = {
     params: {
@@ -14,6 +14,7 @@ export default async function TheaterShowtimes({ params }: Props) {
     }
 
     const screens = await fetchScreensByTheater(theater_id)
+    const theater_name = await fetchTheaterNamefromID(theater_id)
 
     const screensWithShowtimes = await Promise.all(
         screens.map(async (screen) => {
@@ -24,7 +25,7 @@ export default async function TheaterShowtimes({ params }: Props) {
 
     return (
         <div className="p-6">
-            <h1 className="text-6xl font-bold mb-6">Theater {theater_id} - Showtimes</h1>
+            <h1 className="text-6xl font-bold mb-6">{theater_name} - Showtimes</h1>
             {screensWithShowtimes.length === 0 ? (
                 <p>No screenings found for this theater.</p>
             ) : (

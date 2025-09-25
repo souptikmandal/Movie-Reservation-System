@@ -13,6 +13,16 @@ export async function fetchTheaters() {
     }
 }
 
+export async function fetchTheaterNamefromID(theater_id: number) {
+    try {
+        const data = await sql`SELECT name FROM theaters WHERE id = ${theater_id}`
+        return data[0]?.name || null
+    } catch (err) {
+        console.error('Database Error ', err)
+        throw new Error('Failed to fetch theater data')
+    }
+}
+
 export async function fetchScreensByTheater(theater_id: number) {
     try {
         const data = await sql<Screen[]>`SELECT * FROM screens WHERE theater_id = ${theater_id} AND is_active = TRUE`

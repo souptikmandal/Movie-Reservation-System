@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="nord">
+    <html lang="en" data-theme="wireframe">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       ><StackProvider app={stackServerApp}><StackTheme>
