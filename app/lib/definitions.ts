@@ -35,6 +35,7 @@ export type Showtime = {
     start_time: string;
     end_time: string;
     price: number;
+    is_active: boolean;
 }
 
 export type Seat = {

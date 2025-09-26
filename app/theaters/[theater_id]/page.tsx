@@ -49,14 +49,14 @@ export default async function TheaterShowtimes({ params }: Props) {
                                             </p>
                                             <p className="text-sm">
                                                 Start: {new Date(screen.currentShowtime.start_time).toLocaleTimeString([], {
-                                                hour: '2-digit',
-                                                minute: '2-digit'
+                                                    hour: '2-digit',
+                                                    minute: '2-digit'
                                                 })}
                                             </p>
                                             <p className="text-sm">
                                                 End: {new Date(screen.currentShowtime.end_time).toLocaleTimeString([], {
-                                                hour: '2-digit',
-                                                minute: '2-digit'
+                                                    hour: '2-digit',
+                                                    minute: '2-digit'
                                                 })}
                                             </p>
                                             <p className="text-sm font-semibold">${screen.currentShowtime.price}</p>

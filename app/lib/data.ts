@@ -56,3 +56,13 @@ export async function fetchCurrentOrNextShowtime(screen_id: number) {
         throw new Error('Failed to fetch showtime data')
     }
 }
+
+export async function fetchMovies() {
+    try {
+        const data = sql<Movie[]>`SELECT * FROM movies`
+        return data
+    } catch (err) {
+        console.error('Database Error: ', err)
+        throw new Error('Failed to fetch movie data')
+    }
+}
