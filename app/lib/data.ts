@@ -39,6 +39,7 @@ export async function fetchCurrentOrNextShowtime(screen_id: number) {
             SELECT
             s.*,
             m.title as movie_title,
+            m.poster_url as movie_poster,
             m.duration as movie_duration,
             sc.screen_name
             FROM showtimes s

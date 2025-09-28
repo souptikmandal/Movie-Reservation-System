@@ -18,6 +18,7 @@ export type Movie = {
     genre: string;
     release_date: string;
     is_active: boolean;
+    poster_url: string;
 }
 
 export type Screen = {
