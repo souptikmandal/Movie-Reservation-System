@@ -18,10 +18,7 @@ export default async function Page() {
                                 <div>
                                     <h2 className="text-xl font-semibold">{theater.name}</h2>
                                     <p>{theater.address}</p>
-                                    <p>
-                                        {theater.city}, {theater.state} {theater.zip_code}
-                                    </p>
-                                    
+                                    <p>{theater.city}, {theater.state} {theater.zip_code}</p>      
                                 </div>
                                 <div className="list-col-wrap">
                                     <p className="text-sm">Phone: {theater.phone}</p>

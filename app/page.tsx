@@ -6,7 +6,7 @@ export default function Home() {
     <main className="min-h-screen py-12 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">
+          <h1 className="text-8xl font-bold mb-4">
             Movie Theater Management System
           </h1>
           <p className="text-lg">
@@ -14,7 +14,7 @@ export default function Home() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <Link 
             href="/theaters"
             className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-200 hover:border-blue-300"
@@ -76,6 +76,15 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </Link>
+        </div>
+
+        <div className="flex justify-center">
+          <Link 
+            href="/handler/signin"
+            className="btn btn-accent px-8 py-3 rounded-lg font-semibold transition-colors shadow-md hover:shadow-lg"
+          >
+            Sign In
           </Link>
         </div>
       </div>
